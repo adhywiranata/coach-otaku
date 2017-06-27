@@ -9,7 +9,7 @@ class App extends React.Component<{}, {}> {
       <div className="App">
         <Header />
         <p className="App-intro">
-          Complete Anime List Directory
+          Super Complete Anime List Directory
         </p>
       </div>
     );
