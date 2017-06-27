@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 interface PropTypes {
-  animes: [number],
-};
+  animes: [number];
+}
 
 export default (props: PropTypes) => (
   <section className="anime-list">
