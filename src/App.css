@@ -17,7 +17,6 @@
   width: 100%;
   max-width: 768px;
   align-self: center;
-  height: 1500px;
   & h1 {
     color: var(--pale-blue-color);
   };
@@ -86,4 +85,13 @@
     font-size: 1.8rem;
     color: #1BBC9B;
   };
+  & .tag {
+    font-size: 0.7rem;
+    display: inline-block;
+    margin: 1px;
+    padding: 1px 7px;
+    background-color: teal;
+    color: white;
+    border-radius: 20px;
+  }
 }
