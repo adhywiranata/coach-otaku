@@ -1,18 +1,35 @@
 :root {
-  --header-color: teal;
+  --header-color: #446CB3;
 }
 
 .app {
   text-align: center;
+  padding-top: 100px;
 }
 
 .app-header {
   background-color: var(--header-color);
   height: auto;
-  padding: 20px;
-  color: white;
+  padding: 10px;
+  box-shadow: 0px 1px 1px 1px rgba(0,0,0, 0.2);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+}
+
+.app-logo {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  & .first {
+    color: white;
+  }
+  & .second {
+    color: #F0F0F0;
+  }
 }
 
 .app-intro {
   font-size: large;
+  height: 1500px;
 }
