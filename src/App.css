@@ -10,7 +10,6 @@
   padding-top: 60px;
   display: flex;
   align-items: center;
-  /*justify-content: center;*/
 }
 
 .app-wrapper {
@@ -68,8 +67,23 @@
   flex-direction: column;
   padding: 0px;
   box-sizing: border-box;
-  & h2 {
+  position: relative;
+  & .badge {
+    position: absolute;
+    margin: 5px;
+    background: rgba(0,0,0, 0.6);
+    color: #DDDDDD;
+    padding: 5px 10px;
+    border-radius: 20px;
     font-size: 0.7rem;
-    font-weight: 800;
-  }
+    font-weight: 600;
+  };
+  & h2 {
+    font-size: 0.8rem;
+    font-weight: 600;
+  };
+  & .score {
+    font-size: 1.8rem;
+    color: #1BBC9B;
+  };
 }

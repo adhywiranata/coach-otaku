@@ -13,11 +13,13 @@ class App extends React.Component<{}, {}> {
           <section className="anime-list">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map(anime => (
               <div className="anime-card">
+                <div className="badge">TRENDING</div>
                 <div style={{ flex: 1 }}>
                   <img src="https://myanimelist.cdn-dena.com//images//anime//12//85221.jpg" width="100%" />
                 </div>
-                <div style={{ flex: 1 }}>
+                <div style={{ flex: 1, padding: 10, paddingTop: 0 }}>
                   <h2>Boku no Hero Academia Season 2</h2>
+                  <span className="score">9.05</span>
                 </div>
               </div>
             ))}
