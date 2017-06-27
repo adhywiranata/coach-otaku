@@ -4,7 +4,7 @@
 
 .app {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 70px;
 }
 
 .app-header {
@@ -37,4 +37,27 @@
 .app-intro {
   font-size: large;
   height: 1500px;
+}
+
+.anime-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.anime-card {
+  width: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-left: 0;
+  border-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  box-sizing: border-box;
+  & h2 {
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
 }
