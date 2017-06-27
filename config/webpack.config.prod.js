@@ -83,7 +83,7 @@ module.exports = {
     // https://github.com/facebookincubator/create-react-app/issues/290
     extensions: ['.ts', '.tsx', '.js', '.json', '.jsx'],
     alias: {
-      
+
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -192,6 +192,8 @@ module.exports = {
                     ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
                     plugins: () => [
                       require('postcss-flexbugs-fixes'),
+                      require('postcss-cssnext'),
+                      require('postcss-import'),
                       autoprefixer({
                         browsers: [
                           '>1%',

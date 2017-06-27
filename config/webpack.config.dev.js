@@ -190,6 +190,8 @@ module.exports = {
               ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
               plugins: () => [
                 require('postcss-flexbugs-fixes'),
+                require('postcss-cssnext'),
+                require('postcss-import'),
                 autoprefixer({
                   browsers: [
                     '>1%',
