@@ -3,11 +3,11 @@ import * as React from 'react';
 import AnimeList from '../components/Anime/List';
 
 interface StateType {
-  animes: [number],
-};
+  animes: [number];
+}
 
 class HomePage extends React.Component {
-  state: StateType
+  state: StateType;
   constructor() {
     super();
     this.state = {
