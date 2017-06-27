@@ -8,8 +8,8 @@ class App extends React.Component<{}, {}> {
     return (
       <div className="app">
         <Header />
-        <section className="app-intro">
-          <h1>Complete Anime List</h1>
+        <section className="app-wrapper">
+          <h1>Animes for You</h1>
           <section className="anime-list">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map(anime => (
               <div className="anime-card">
