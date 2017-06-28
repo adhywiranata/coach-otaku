@@ -1,3 +1,5 @@
 import { createStore } from 'redux';
 
-export default createStore(() => ({ yo: 'wow' }));
+import rootReducer from './reducers/rootReducer';
+
+export default createStore(rootReducer);

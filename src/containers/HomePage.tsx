@@ -4,50 +4,29 @@ import { connect } from 'react-redux';
 import AnimeList from '../components/Anime/List';
 import { Anime } from '../types';
 
-interface StateType {
-  animes: [Anime];
+interface Animes {
+  data: [Anime];
+  isFetching: boolean;
 }
 
-class HomePage extends React.Component<{ yo: string }> {
-  state: StateType;
-  constructor() {
-    super();
-    this.state = {
-      animes: [
-        {
-          id: 1,
-          title: 'Boku No Hero Academia',
-          linkCanonical: '',
-          synopsis: '',
-          type: '',
-          episodes: 24,
-          status: 'Airing',
-          aired: '',
-          producer: ['Sunrise'],
-          studio: ['Sunrise'],
-          genre: [['Shounen'], ['Seinen'], ['Action']],
-          score: [8.9],
-          ranked: 1,
-          popularity: 2453,
-          openingTheme: ['yeah'],
-          endingTheme: ['wow'],
-        },
-      ],
-    };
-  }
+class HomePage extends React.Component<{ animes: [Anime] }> {
+
   render() {
     return (
       <section className="app-wrapper">
         <h1>Animes for You</h1>
-        <AnimeList animes={this.state.animes} />
+        <AnimeList animes={this.props.animes} />
       </section>
     );
   }
 }
 
-const mapStateToProps = (state: { yo: string }) => ({
-  yo: state.yo,
-});
+const mapStateToProps = (state: { animes: Animes }) => {
+  console.log(state.animes)
+  return {
+    animes: state.animes.data,
+  }
+};
 
 const mapDispatchToProps = (dispatch: {}) => ({
 
