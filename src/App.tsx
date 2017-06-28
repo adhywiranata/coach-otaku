@@ -6,6 +6,7 @@ import './App.css';
 import Header from './components/Header';
 import HomePage from './containers/HomePage';
 import Navbar from './components/core/Navbar';
+import Overlay from './components/core/Navbar/Overlay';
 
 interface StateTypes {
   isNavbarActive: boolean;
@@ -32,6 +33,7 @@ class App extends React.Component<{}, StateTypes> {
       <Provider store={store}>
         <div className="app">
           <Navbar isNavbarActive={this.state.isNavbarActive} toggleNavbar={this.toggleNavbar} />
+          <Overlay isNavbarActive={this.state.isNavbarActive} toggleNavbar={this.toggleNavbar} />
           <Header toggleNavbar={this.toggleNavbar} />
           <HomePage />
         </div>

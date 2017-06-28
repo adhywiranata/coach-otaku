@@ -11,6 +11,7 @@ const Navbar = ({ isNavbarActive, toggleNavbar }: { isNavbarActive: boolean; tog
       <span>MENU</span>
     </header>
     <section className="navbar-content">
+      wow
     </section>
   </div>
 );
