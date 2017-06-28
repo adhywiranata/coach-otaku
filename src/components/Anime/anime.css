@@ -1,3 +1,5 @@
+@import "../../constants.css";
+
 .anime-list {
   display: flex;
   flex-direction: row;
@@ -8,7 +10,7 @@
 
 .anime-card {
   width: 50%;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid var(--transparent-grey-color);
   border-left: 0;
   border-bottom: 0;
   display: flex;

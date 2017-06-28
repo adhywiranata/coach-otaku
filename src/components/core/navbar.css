@@ -1,0 +1,12 @@
+@import "../../constants.css";
+
+.navbar {
+  position: fixed;
+  z-index: 10;
+  width: 70vw;
+  height: 100vh;
+  background-color: var(--white-color);
+  border-right: 1px solid var(--transparent-grey-color);
+  box-shadow: 0px 1px 7px 1px var(--transparent-grey-color);
+  transition: 0.5s;
+}
