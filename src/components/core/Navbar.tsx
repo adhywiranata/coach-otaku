@@ -2,14 +2,11 @@ import * as React from 'react';
 
 import './navbar.css';
 
-class Navbar extends React.Component {
-  render() {
-    return (
-      <div className="navbar">
-        wowowoowow
-      </div>
-    );
-  }
-}
+const Navbar = ({ isNavbarActive, toggleNavbar }: { isNavbarActive: boolean; toggleNavbar: any; }) => (
+  <div className="navbar" style={{ left: isNavbarActive ? 0 : '-71vw' }}>
+    wowowoowow
+    <button onClick={toggleNavbar}>X</button>
+  </div>
+);
 
 export default Navbar;
