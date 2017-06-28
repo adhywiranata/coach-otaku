@@ -29,7 +29,7 @@
     font-weight: 600;
   };
   & img {
-    height: 350px;
+    height: 300px;
     object-fit: cover;
   };
   & h2 {
