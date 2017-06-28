@@ -21,8 +21,6 @@ const mapStateToProps = (state: { animes: AnimeState }) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: {}) => ({
-
-});
+const mapDispatchToProps = (dispatch: {}) => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
