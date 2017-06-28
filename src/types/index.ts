@@ -16,3 +16,10 @@ export interface Anime {
   readonly openingTheme: [string];
   readonly endingTheme: [string];
 }
+
+export type Animes = [Anime];
+
+export interface AnimeState {
+  data: Animes;
+  isFetching: boolean;
+}

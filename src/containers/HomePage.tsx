@@ -2,15 +2,9 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import AnimeList from '../components/Anime/List';
-import { Anime } from '../types';
+import { Animes, AnimeState } from '../types';
 
-interface Animes {
-  data: [Anime];
-  isFetching: boolean;
-}
-
-class HomePage extends React.Component<{ animes: [Anime] }> {
-
+class HomePage extends React.Component<{ animes: Animes }> {
   render() {
     return (
       <section className="app-wrapper">
@@ -21,11 +15,10 @@ class HomePage extends React.Component<{ animes: [Anime] }> {
   }
 }
 
-const mapStateToProps = (state: { animes: Animes }) => {
-  console.log(state.animes)
+const mapStateToProps = (state: { animes: AnimeState }) => {
   return {
     animes: state.animes.data,
-  }
+  };
 };
 
 const mapDispatchToProps = (dispatch: {}) => ({
