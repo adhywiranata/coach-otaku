@@ -13,7 +13,7 @@ export default ({ animes }: PropTypes) => (
       <div key={anime.id} className="anime-card">
         <div className="badge">TRENDING</div>
         <div style={{ flex: 1 }}>
-          <img src="https://myanimelist.cdn-dena.com//images//anime//12//85221.jpg" width="100%" />
+          <img src={anime.imageUrl} width="100%" />
         </div>
         <div style={{ flex: 1, paddingBottom: 10 }}>
           <h2>{anime.title}</h2>

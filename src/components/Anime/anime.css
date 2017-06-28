@@ -28,6 +28,10 @@
     font-size: 0.7rem;
     font-weight: 600;
   };
+  & img {
+    height: 350px;
+    object-fit: cover;
+  };
   & h2 {
     font-size: 0.8rem;
     font-weight: 600;

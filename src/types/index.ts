@@ -2,6 +2,7 @@ export interface Anime {
   readonly id: number;
   readonly title: string;
   readonly linkCanonical: string;
+  readonly imageUrl: string;
   readonly synopsis: string;
   readonly type: string;
   readonly episodes: number;
