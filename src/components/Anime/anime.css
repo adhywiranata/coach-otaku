@@ -21,11 +21,11 @@
   & .badge {
     position: absolute;
     margin: 5px;
-    background: rgba(0,0,0, 0.6);
-    color: #DDDDDD;
+    background: var(--transparent-darker-grey-color);
+    color: var(--darker-white-color);
     padding: 5px 10px;
     border-radius: 20px;
-    font-size: 0.7rem;
+    font-size: var(--extra-small-font);
     font-weight: 600;
   };
   & img {
@@ -33,20 +33,20 @@
     object-fit: cover;
   };
   & h2 {
-    font-size: 0.8rem;
+    font-size: var(--small-font);
     font-weight: 600;
   };
   & .score {
-    font-size: 1.8rem;
-    color: #1BBC9B;
+    font-size: var(--extra-large-font);
+    color: var(--orange-color);
   };
   & .tag {
-    font-size: 0.7rem;
+    font-size: var(--extra-small-font);
     display: inline-block;
     margin: 1px;
-    padding: 1px 7px;
-    background-color: teal;
-    color: white;
+    padding: 3px 7px;
+    background-color: var(--grey-color);
+    color: var(--white-color);
     border-radius: 20px;
   }
 }

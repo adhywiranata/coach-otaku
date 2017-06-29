@@ -1,6 +1,15 @@
 :root {
   --pale-blue-color: #446CB3;
   --white-color: #FFFFFF;
+  --darker-white-color: #DDDDDD;
   --black-color: #000000;
+  --orange-color: #F89406;
   --transparent-grey-color: rgba(0,0,0, 0.1);
+  --transparent-darker-grey-color: rgba(0,0,0, 0.5);
+  --grey-color: #555555;
+  --extra-small-font: 0.6rem;
+  --small-font: 0.8rem;
+  --medium-font: 1rem;
+  --large-font: 1.3rem;
+  --extra-large-font: 2rem;
 }

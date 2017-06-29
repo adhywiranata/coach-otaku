@@ -40,9 +40,9 @@
   text-transform: uppercase;
   font-size: 1.5rem;
   & .first {
-    color: white;
+    color: var(--white-color);
   }
   & .second {
-    color: #F0F0F0;
+    color: var(--darker-white-color);
   }
 }
