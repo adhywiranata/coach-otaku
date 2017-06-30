@@ -42,6 +42,7 @@
     box-sizing: border-box;
   };
   & button {
+    outline: none;
     background-color: transparent;
     border: 0;
     font-weight: bold;

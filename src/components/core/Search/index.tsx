@@ -18,6 +18,7 @@ interface StateToProps {
 
 interface DispatchToProps {
   setSearchKeyword: any;
+  resetSearchKeyword: any;
 }
 
 class SearchSection extends React.Component<StateToProps & DispatchToProps & OwnProps, {}> {
@@ -25,14 +26,19 @@ class SearchSection extends React.Component<StateToProps & DispatchToProps & Own
     super(props);
 
     this.handleSearchInput = this.handleSearchInput.bind(this);
+    this.handleResetSearchKeyword = this.handleResetSearchKeyword.bind(this);
   }
 
   handleSearchInput(e: any): void {
     this.props.setSearchKeyword(e.target.value);
   }
 
+  handleResetSearchKeyword(e: any): void {
+    this.props.resetSearchKeyword();
+  }
+
   render() {
-    const { isSearchActive, toggleSearch, filteredAnimes } = this.props;
+    const { isSearchActive, toggleSearch, filteredAnimes, animeSearchKeyword } = this.props;
     return (
       <div className="search-container" style={{ top: isSearchActive ? 0 : '100vh' }}>
         <header>
@@ -40,13 +46,14 @@ class SearchSection extends React.Component<StateToProps & DispatchToProps & Own
           <img src={require('./close.png')} width="20px" onClick={toggleSearch} />
         </header>
         <section className="search-form">
-          <form>
+          <form onSubmit={(e) => e.preventDefault() }>
             <input
               type="text"
               placeholder="search for titles.."
               onChange={this.handleSearchInput}
+              value={animeSearchKeyword}
             />
-            <button>x</button>
+            <button onClick={this.handleResetSearchKeyword}>x</button>
           </form>
         </section>
         <SearchResults animes={filteredAnimes} />
@@ -58,12 +65,14 @@ class SearchSection extends React.Component<StateToProps & DispatchToProps & Own
 const mapStateToProps = ({ animes, animeSearchKeyword }: StateToProps): any => {
   return {
     filteredAnimes: animes.data.filter(anime => anime.title.toLowerCase().includes(animeSearchKeyword.toLowerCase())),
+    animeSearchKeyword,
   };
 };
 
 const mapDispatchToProps = (dispatch: any): DispatchToProps => {
   return {
     setSearchKeyword: (searchKeyword: string) => dispatch({ type: 'SET_SEARCH_KEYWORD', payload: searchKeyword }),
+    resetSearchKeyword: () => dispatch({ type: 'RESET_SEARCH_KEYWORD' }),
   };
 };
 
