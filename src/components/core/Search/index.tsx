@@ -56,7 +56,7 @@ class SearchSection extends React.Component<StateToProps & DispatchToProps & Own
             <button onClick={this.handleResetSearchKeyword}>x</button>
           </form>
         </section>
-        <SearchResults animes={filteredAnimes} />
+        <SearchResults animes={filteredAnimes} toggleSearch={toggleSearch} />
       </div>
     );
   }
