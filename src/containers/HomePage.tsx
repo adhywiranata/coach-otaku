@@ -1,10 +1,25 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+// import { RouteComponentProps, withRouter } from 'react-router-dom';
 
 import AnimeList from '../components/Anime/List';
 import { Animes, AnimeState } from '../types';
 
-class HomePage extends React.Component<{ animes: Animes }> {
+// interface HomeProps extends RouteComponentProps<any> {
+//   match: any;
+//   history: any;
+//   location: any;
+//   animes: Animes;
+// }
+
+interface HomeProps {
+  match: any;
+  history: any;
+  location: any;
+  animes: Animes;
+}
+
+class HomePage extends React.Component<HomeProps, {}> {
   render() {
     return (
       <section className="app-wrapper">

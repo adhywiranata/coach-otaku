@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import store from './configureStore';
 import './App.css';
@@ -41,13 +42,17 @@ class App extends React.Component<{}, StateTypes> {
   render() {
     return (
       <Provider store={store}>
-        <div className="app">
-          <Search isSearchActive={this.state.isSearchActive} toggleSearch={this.toggleSearch} />
-          <Navbar isNavbarActive={this.state.isNavbarActive} toggleNavbar={this.toggleNavbar} />
-          <Overlay isNavbarActive={this.state.isNavbarActive} toggleNavbar={this.toggleNavbar} />
-          <Header toggleNavbar={this.toggleNavbar} toggleSearch={this.toggleSearch} />
-          <HomePage />
-        </div>
+        <BrowserRouter>
+          <div className="app">
+            <Search isSearchActive={this.state.isSearchActive} toggleSearch={this.toggleSearch} />
+            <Navbar isNavbarActive={this.state.isNavbarActive} toggleNavbar={this.toggleNavbar} />
+            <Overlay isNavbarActive={this.state.isNavbarActive} toggleNavbar={this.toggleNavbar} />
+            <Header toggleNavbar={this.toggleNavbar} toggleSearch={this.toggleSearch} />
+            <Switch>
+              <Route exact path="/" component={(props: any) => <HomePage {...props} />} />
+            </Switch>
+          </div>
+        </BrowserRouter>
       </Provider>
     );
   }
