@@ -1,6 +1,8 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 
 import './search.css';
+import { Animes } from '../../../types';
 import SearchResults from './SearchResults';
 
 interface PropTypes {
@@ -29,4 +31,14 @@ class SearchSection extends React.Component<PropTypes, {}> {
   }
 }
 
-export default SearchSection;
+const mapStateToProps = ({ animes }: { animes: Animes }): any => {
+  return {
+    animes,
+  };
+};
+
+const mapDispatchToProps = (dispatch: any) => {
+  return {};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchSection);
