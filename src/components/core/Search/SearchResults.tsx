@@ -1,12 +1,14 @@
 import * as React from 'react';
 
-const SearchResults = () => (
+import { Animes } from '../../../types';
+
+const SearchResults = ({ animes }: { animes: Animes }) => (
   <section className="search-results">
-    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(item => (
-      <div className="search-result" key={item}>
-        <img src="https://myanimelist.cdn-dena.com/images/anime/12/85221.jpg" width="50px" />
-        <span>Kimi no Nawa</span>
-        <span className="score">9.08</span>
+    {animes.map(anime => (
+      <div className="search-result" key={anime.id}>
+        <img src={anime.imageUrl} width="50px" />
+        <span>{anime.title}</span>
+        <span className="score">{anime.score}</span>
       </div>
     ))}
   </section>

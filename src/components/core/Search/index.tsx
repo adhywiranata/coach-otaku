@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import './search.css';
-import { Animes } from '../../../types';
+import { Animes, AnimeState } from '../../../types';
 import SearchResults from './SearchResults';
 
 interface OwnProps {
@@ -11,14 +11,16 @@ interface OwnProps {
 }
 
 interface StateToProps {
-  animes: Animes;
+  animes: AnimeState;
+  animeSearchKeyword: string;
+  filteredAnimes: Animes;
 }
 
 interface DispatchToProps {}
 
 class SearchSection extends React.Component<StateToProps & DispatchToProps & OwnProps, {}> {
   render() {
-    const { isSearchActive, toggleSearch } = this.props;
+    const { isSearchActive, toggleSearch, filteredAnimes } = this.props;
     return (
       <div className="search-container" style={{ top: isSearchActive ? 0 : '100vh' }}>
         <header>
@@ -31,15 +33,15 @@ class SearchSection extends React.Component<StateToProps & DispatchToProps & Own
             <button>x</button>
           </form>
         </section>
-        <SearchResults />
+        <SearchResults animes={filteredAnimes} />
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ animes }: { animes: Animes }): StateToProps => {
+const mapStateToProps = ({ animes, animeSearchKeyword }: StateToProps): any => {
   return {
-    animes,
+    filteredAnimes: animes.data.filter(anime => anime.title.includes(animeSearchKeyword)),
   };
 };
 
