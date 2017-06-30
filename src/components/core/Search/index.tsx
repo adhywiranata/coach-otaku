@@ -57,7 +57,7 @@ class SearchSection extends React.Component<StateToProps & DispatchToProps & Own
 
 const mapStateToProps = ({ animes, animeSearchKeyword }: StateToProps): any => {
   return {
-    filteredAnimes: animes.data.filter(anime => anime.title.includes(animeSearchKeyword)),
+    filteredAnimes: animes.data.filter(anime => anime.title.toLowerCase().includes(animeSearchKeyword.toLowerCase())),
   };
 };
 
