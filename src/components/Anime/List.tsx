@@ -17,7 +17,7 @@ export default ({ animes }: PropTypes) => (
           <img src={anime.imageUrl} width="100%" />
         </div>
         <div style={{ flex: 1, paddingBottom: 10 }}>
-          <Link to="/anime/5" className="link"><h2>{anime.title}</h2></Link>
+          <Link to={`/anime/${anime.id}`} className="link"><h2>{anime.title}</h2></Link>
           <span className="score">{anime.score[0]}</span>
           <div>
             <div className="tag">Shounen</div>
