@@ -16,9 +16,21 @@ interface StateToProps {
   filteredAnimes: Animes;
 }
 
-interface DispatchToProps {}
+interface DispatchToProps {
+  setSearchKeyword: any;
+}
 
 class SearchSection extends React.Component<StateToProps & DispatchToProps & OwnProps, {}> {
+  constructor(props: any) {
+    super(props);
+
+    this.handleSearchInput = this.handleSearchInput.bind(this);
+  }
+
+  handleSearchInput(e: any): void {
+    this.props.setSearchKeyword(e.target.value);
+  }
+
   render() {
     const { isSearchActive, toggleSearch, filteredAnimes } = this.props;
     return (
@@ -29,7 +41,11 @@ class SearchSection extends React.Component<StateToProps & DispatchToProps & Own
         </header>
         <section className="search-form">
           <form>
-            <input type="text" placeholder="search for titles.." />
+            <input
+              type="text"
+              placeholder="search for titles.."
+              onChange={this.handleSearchInput}
+            />
             <button>x</button>
           </form>
         </section>
@@ -46,7 +62,9 @@ const mapStateToProps = ({ animes, animeSearchKeyword }: StateToProps): any => {
 };
 
 const mapDispatchToProps = (dispatch: any): DispatchToProps => {
-  return {};
+  return {
+    setSearchKeyword: (searchKeyword: string) => dispatch({ type: 'SET_SEARCH_KEYWORD', payload: searchKeyword }),
+  };
 };
 
 export default connect<StateToProps, DispatchToProps, OwnProps>(
