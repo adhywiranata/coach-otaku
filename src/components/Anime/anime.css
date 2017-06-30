@@ -8,6 +8,11 @@
   align-items: flex-start;
 }
 
+.link {
+  text-decoration: none;
+  color: var(--pale-blue-color);
+}
+
 .anime-card {
   width: 50%;
   border: 1px solid var(--transparent-grey-color);

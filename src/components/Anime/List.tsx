@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 import './anime.css';
 import { Animes } from '../../types';
@@ -16,7 +17,7 @@ export default ({ animes }: PropTypes) => (
           <img src={anime.imageUrl} width="100%" />
         </div>
         <div style={{ flex: 1, paddingBottom: 10 }}>
-          <h2>{anime.title}</h2>
+          <Link to="/anime/5" className="link"><h2>{anime.title}</h2></Link>
           <span className="score">{anime.score[0]}</span>
           <div>
             <div className="tag">Shounen</div>

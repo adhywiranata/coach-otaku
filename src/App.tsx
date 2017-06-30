@@ -6,6 +6,7 @@ import store from './configureStore';
 import './App.css';
 import Header from './components/Header';
 import HomePage from './containers/HomePage';
+import DetailPage from './containers/DetailPage';
 import Navbar from './components/core/Navbar';
 import Overlay from './components/core/Navbar/Overlay';
 import Search from './components/core/Search';
@@ -50,6 +51,7 @@ class App extends React.Component<{}, StateTypes> {
             <Header toggleNavbar={this.toggleNavbar} toggleSearch={this.toggleSearch} />
             <Switch>
               <Route exact path="/" component={(props: any) => <HomePage {...props} />} />
+              <Route path="/anime/:id" component={(props: any) => <DetailPage {...props} />} />
             </Switch>
           </div>
         </BrowserRouter>
