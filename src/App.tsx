@@ -11,9 +11,7 @@ import HomePage from './containers/HomePage';
 import DetailPage from './containers/DetailPage';
 import Navbar from './components/core/Navbar';
 import Overlay from './components/core/Navbar/Overlay';
-import Search from './components/core/Search';
-
-console.log(ConnectedRouter);
+import SearchSection from './components/core/Search';
 
 const history = createHistory();
 
@@ -51,7 +49,7 @@ class App extends React.Component<{}, StateTypes> {
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <div className="app">
-            <Search isSearchActive={this.state.isSearchActive} toggleSearch={this.toggleSearch} />
+            <SearchSection isSearchActive={this.state.isSearchActive} toggleSearch={this.toggleSearch} />
             <Navbar isNavbarActive={this.state.isNavbarActive} toggleNavbar={this.toggleNavbar} />
             <Overlay isNavbarActive={this.state.isNavbarActive} toggleNavbar={this.toggleNavbar} />
             <Header toggleNavbar={this.toggleNavbar} toggleSearch={this.toggleSearch} />

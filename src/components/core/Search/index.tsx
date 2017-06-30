@@ -5,12 +5,18 @@ import './search.css';
 import { Animes } from '../../../types';
 import SearchResults from './SearchResults';
 
-interface PropTypes {
+interface OwnProps {
   isSearchActive: boolean;
   toggleSearch: any;
 }
 
-class SearchSection extends React.Component<PropTypes, {}> {
+interface StateToProps {
+  animes: Animes;
+}
+
+interface DispatchToProps {}
+
+class SearchSection extends React.Component<any, {}> {
   render() {
     const { isSearchActive, toggleSearch } = this.props;
     return (
@@ -31,14 +37,17 @@ class SearchSection extends React.Component<PropTypes, {}> {
   }
 }
 
-const mapStateToProps = ({ animes }: { animes: Animes }): any => {
+const mapStateToProps = ({ animes }: { animes: Animes }): StateToProps => {
   return {
     animes,
   };
 };
 
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: any): DispatchToProps => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchSection);
+export default connect<StateToProps, DispatchToProps, OwnProps>(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchSection as any);
