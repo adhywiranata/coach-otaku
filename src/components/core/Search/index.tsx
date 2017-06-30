@@ -16,7 +16,7 @@ interface StateToProps {
 
 interface DispatchToProps {}
 
-class SearchSection extends React.Component<any, {}> {
+class SearchSection extends React.Component<StateToProps & DispatchToProps & OwnProps, {}> {
   render() {
     const { isSearchActive, toggleSearch } = this.props;
     return (
